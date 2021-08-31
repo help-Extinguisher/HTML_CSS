@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹 폼</title>
+    <style>
+        body {
+            background-color: #FFF;
+        }
+        form fieldset {
+            margin-bottom: 25px;
+        }
+        form legend {
+            font-size: 15px;
+            font-weight: 600;
+        }
+        form label.reg {
+            font-size: 14px;
+            width: 110px;
+            color: #390;
+            text-align: right;
+            margin-right: 10px;
+        }
+        form ul li {
+            list-style: none;
+            margin: 15px 0;
+            font-size: 14px;
+        }
+        #member, #stuffs {
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <!-- h1+form>((fiedset>(legend+(ul>li>(label+input))))+(fiedset>(legend+(ul>((li>(label+input))*2)+(li>(label+(select>option*6))))))+(fiedset>(legend+(ul>(li>(label+input))*3)))+(fiedset>button*2)) -->
+    <h1>여름방학 특강 신청</h1>
+    <form>
+        <fiedset id="register">
+            <legend>신청자</legend>
+                <ul>
+                    <li>
+                        <label class="reg" for="uname">이름</label>
+                        <!-- autofocus 속성 : 화면에 표출될때 자동으로 마우스 커서 표시 -->
+                        <!-- required 속성 : 필수 입력 필드 설정 -->
+                        <input type="text" id="uname" autofocus required>
+                    </li>
+                        <label class="reg" for="uid">학번</label>
+                        <!-- placeholder 속성 : 입력하는 내용의 힌트 표시 -->
+                        <!-- maxlength 속성 : 입력할 수 있는 최대 문자 길이 -->
+                        <input type="text" id="uid" placeholder="하이픈없이 입력" maxlength="8" required>
+                    </li>
+                    <li>
+                        <label class="reg" for="uclass">학과</label>
+                        <!-- select : 드롭다운 목록 생성 -->
+                        <!-- size 속성 : 화면에 표시될 항목의 개수 지정 -->
+                        <!-- multiple 속성 : 여러개의 항목을 선택가능한 속성 -->
+                        <select id="uclass" size="5" multiple>
+                            <!-- option : 드롭다운 목록에 항목 추가 -->
+                            <!-- 선택된 항목의 value값이 submit될때 서버로 전송 -->
+                            <option value="archi">건축공학과</option>
+                            <option value="mechanic">기계공학과</option>
+                            <option value="indust">산업공학과</option>
+                            <option value="elec">전기전자공학과</option>
+                            <!-- selected 속성 : 화면에 표출될때 선택될 항목 지정 -->
+                            <option value="computer" selected>컴퓨터공학과</option>
+                            <option value="chemical">화학공학과</option>
+                        </select>
+                    </li>
+                </ul>
+            </fiedset>
+    </form>
+</body>
+</html>
